@@ -1,14 +1,9 @@
-# Kalkulator Tarif Kereta (versi CLI)
-
-# ====== ATURAN TARIF ======
 tarif_dasar = 2000   # harga untuk jarak paling dekat
 batas_dasar = 5      # jarak (km) yang masih masuk tarif dasar
 isi_blok = 3         # tiap 3 km tambahan dihitung 1 blok
 tarif_blok = 500     # tambahan harga untuk setiap blok
 jarak_maks = 1000    # batas atas jarak yang boleh dimasukkan (km)
 
-
-# ====== FUNGSI HITUNG TARIF ======
 def hitung_tarif(jarak):
     total = tarif_dasar
     sisa = jarak - batas_dasar   # jarak yang melebihi batas dasar
@@ -16,7 +11,7 @@ def hitung_tarif(jarak):
     # selama masih ada sisa jarak, tambah 1 blok
     while sisa > 0:
         total = total + tarif_blok
-        sisa = sisa - isi_blok   # sisa 1 km pun tetap dihitung 1 blok
+        sisa = sisa - isi_blok   # sisa 1 km tetap dihitung 1 blok
 
     return total
 
